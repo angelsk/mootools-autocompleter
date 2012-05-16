@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+  <title>Local Tag - AutoCompleter Showcase - digitarald:Harald Kirschner</title>
+  <!-- 
+    Taken from: http://digitarald.de/project/autocompleter/1-1/showcase/
+   -->
+  <!-- dynamic assets -->
+  <link rel="stylesheet" type="text/css" href="../Assets/Autocompleter.css" />
+  <link rel="stylesheet" type="text/css" href="site.css" />
+  <style type="text/css">
+  #demo-local
+  {
+    width:        350px;
+    border:       1px solid #444;
+  }
+  </style>
+
+  <script type="text/javascript" src="mootools-1.2-core-nc.js"></script>
+  <script type="text/javascript" src="../Source/Observer.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.Local.js"></script>
+  <script type="text/javascript">
+    document.addEvent('domready', function() {
+  
+      // Test source, list of tags from http://del.icio.us/tag/
+      var tokens = ['.net', '2008', '3d', 'advertising', 'ajax', 'appengine', 'apple', 'architecture', 'art', 'article', 'articles', 'audio', 'blog', 'blogging', 'blogs', 'books', 'business', 'china', 'community', 'computer', 'cooking', 'cool', 'css', 'culture', 'design', 'development', 'diy', 'download', 'education', 'english', 'environment', 'fashion', 'fic', 'film', 'finance', 'firefox', 'flash', 'flex', 'flickr', 'fonts', 'food', 'free', 'freeware', 'fun', 'funny', 'gallery', 'games', 'generator', 'git', 'google', 'government', 'graphics', 'green', 'hardware', 'health', 'history', 'home', 'howto', 'humor', 'illustration', 'imported', 'inspiration', 'interactive', 'internet', 'java', 'javascript', 'job', 'jobs', 'language', 'law', 'library', 'linux', 'mac', 'maps', 'marketing', 'math', 'media', 'microsoft', 'mobile', 'money', 'mp3', 'music', 'news', 'online', 'opensource', 'osx', 'photo', 'photography', 'photos', 'photoshop', 'php', 'politics', 'portfolio', 'productivity', 'programming', 'python', 'rails', 'recipe', 'recipes', 'reference', 'research', 'resources', 'ruby', 'school', 'science', 'search', 'security', 'seo', 'sga', 'shopping', 'slash', 'social', 'software', 'statistics', 'teaching', 'tech', 'technology', 'tips', 'todo', 'tools', 'toread', 'travel', 'tutorial', 'tutorials', 'tv', 'twitter', 'typography', 'ubuntu', 'video', 'visualization', 'web', 'web2.0', 'webdesign', 'webdev', 'wiki', 'windows', 'wordpress', 'work', 'writing', 'youtube'];
+    
+      // Our instance for the element with id "demo-local"
+      new Autocompleter.Local('demo-local', tokens, {
+        'minLength': 1, // We need at least 1 character
+        'selectMode': 'type-ahead', // Instant completion
+        'multiple': true // Tag support, by default comma separated
+      });
+    
+      // Our instance for the element with id "demo-local-2", the textarea
+      new Autocompleter.Local('demo-local-2', tokens, {
+        'minLength': 1, // We need at least 1 character
+        'selectMode': 'type-ahead', // Instant completion
+        'multiple': true // Tag support, by default comma separated
+      });
+    
+    });
+  </script>
+
+</head>
+<body>
+  <div id="demo-container">
+    <h3>Showcase "Local Tag"</h3>
+
+    <p>Autocompleted tags in input fields and textareas, controlled by keyboard and mouse. </p>
+  
+    <h4 class="code">The Action Happens Here</h4>
+    <div id="demo">
+  
+      <form action="http://del.icio.us/search/" method="get" id="form-demo">
+        <fieldset>
+      
+          <legend><a href="http://del.icio.us/">del.icio.us</a> / search <small>(Suggestions from <a href="http://del.icio.us/tag/">top tags</a>)</small></legend>
+          <label>
+            <input type="text" name="p" id="demo-local" />
+          </label>
+      
+          <label>
+            <textarea name="p_long" id="demo-local-2" style="height: 100px;"></textarea>
+          </label>
+      
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+  

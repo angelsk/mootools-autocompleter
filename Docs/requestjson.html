@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+  <title>JSON Request - AutoCompleter Showcase - digitarald:Harald Kirschner</title>
+  <!-- 
+    Taken from: http://digitarald.de/project/autocompleter/1-1/showcase/
+   -->
+  <!-- dynamic assets -->
+  <link rel="stylesheet" type="text/css" href="../Assets/Autocompleter.css" />
+  <link rel="stylesheet" type="text/css" href="site.css" />
+  <style type="text/css">
+    #demo-word
+    {
+      width:        390px;
+    }
+    #demo-words
+    {
+      height:       50px;
+    }
+    
+    img.autocompleter-loading
+    {
+      vertical-align:   top;
+    }
+  </style>
+  
+  <script type="text/javascript" src="mootools-1.2-core-nc.js"></script>
+  <script type="text/javascript" src="../Source/Observer.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.Request.js"></script>
+  <script type="text/javascript">
+    document.addEvent('domready', function() {
+  
+      var inputWord = $('demo-word');
+  
+      // Our instance for the element with id "demo-word"
+      new Autocompleter.Request.JSON(inputWord, 'http://digitarald.de/project/autocompleter/1-1/showcase/request-json/script.php', {
+        'indicatorClass': 'autocompleter-loading'
+      });
+  
+      var inputWord2 = $('demo-words');
+  
+      // An element as indicator, shown during background request
+      var indicator = inputWord2.getPrevious().getElement('.autocompleter-loading');
+      indicator.setStyle('display', 'none');
+  
+      new Autocompleter.Request.JSON(inputWord2, 'http://digitarald.de/project/autocompleter/1-1/showcase/request-json/script.php', {
+        'indicator': indicator,
+        'multiple': true,
+        'selectFirst': true,
+        'selectMode': false,
+        'minLength': 2
+      });
+  
+    });
+  </script>
+
+</head>
+<body>
+  <div id="demo-container">
+    <h3>Showcase "JSON Request"</h3>
+
+    <p></p>
+  
+    <h4 class="code">The Action Happens Here</h4>
+    <div id="demo">
+  
+      <form action="http://www.spanishdict.com/translate" method="get" id="form-demo">
+        <fieldset>
+    
+          <legend>Spanish Dictionary:</legend>
+          <label>
+            <span>Single word:</span>
+            <input type="text" name="word" class="text" id="demo-word" />
+          </label>
+      
+          <label>
+            <span>As Tags: <img src="spinner.gif" class="autocompleter-loading" /></span>
+            <textarea rows="100" cols="100" id="demo-words">playa, palma</textarea>
+      
+          </label>
+      
+        </fieldset>
+      
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+  

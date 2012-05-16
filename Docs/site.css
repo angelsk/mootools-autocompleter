@@ -1,0 +1,153 @@
+body {
+	margin: 0;
+	font-size: 81.25%;
+	color: #222;
+}
+
+a {
+	color: #336999;
+	text-decoration: underline;
+	outline: none;
+}
+a:visited {
+	color: #336999;
+}
+a:focus, a:hover {
+	color: #669ccc;
+}
+a.strong {
+	font-weight: bold;
+}
+p a {
+	padding: 1px;
+}
+
+/*****************************************************************************
+ * Elements
+ */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	color: #444;
+}
+h2 a, h3 a, h4 a,
+h2 a:link, h3 a:link, h4 a:link {
+	text-decoration: none;
+	color: inherit !important;
+}
+h1 {
+	font-size: 218%;
+	font-weight: normal;
+}
+h2 {
+	font-size: 164%;
+	border-bottom: 1px solid #eee;
+	font-weight: bold;
+	color: #9a6316;
+}
+h2 a {
+	padding: .15em;
+}
+h2 a:hover,
+h2 a:focus {
+	color: #eca643 !important;
+	text-decoration: underline !important;
+}
+
+h3 {
+	font-size: 145%;
+	/*border-top: 1px solid #eee;*/
+	margin-top: 0.6em;
+	padding-top: 0.4em;
+	margin-top: 1em;
+	font-weight: bold;
+	color: #444;
+	clear: both;
+}
+h3 a {
+	color: #444;
+}
+h4 {
+	margin-top: 0.6em;
+	padding-top: 0.4em;
+	font-size: 118%;
+	font-weight: bold;
+	color: #444;
+	clear: both;
+}
+
+pre {
+	overflow-x: auto;
+	background-color: #f5f5f5;
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 10px;
+	width: 600px;
+	max-height: 500px;
+}
+
+p img {
+	margin: 0.5em 1em 0.5em 0;
+}
+
+p + p {
+	margin-top: -.75em;
+}
+
+.demos li {
+	color: #888;
+	margin-top: 1px;
+}
+.demos li a {
+	font-weight: bold;
+	padding-right: .2em;
+}
+.inline li a {
+	padding-right: 0;
+}
+
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+
+#demo {
+	padding: 0.8em 0 2em;
+	clear: both;
+}
+
+#demo-container {
+  width: 500px;
+  margin: 0 auto; 
+}
+
+label {
+	display: block;
+	font-weight: bold;
+}
+label span {
+	display: block;
+}
+
+textarea {
+  height: 250px;
+  padding: 5px;
+  width: 390px;
+}
+
+input[type=text], textarea, select {
+  border: 1px solid #BBB;
+  margin: 0.5em 0px;
+}
+
+input.text, input.title {
+  padding: 5px;
+  width: 300px;
+}
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+}

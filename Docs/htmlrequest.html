@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://gmpg.org/xfn/11">
+  <title>HTML Request - AutoCompleter Showcase - digitarald:Harald Kirschner</title>
+  <!-- 
+    Taken from: http://digitarald.de/project/autocompleter/1-1/showcase/
+   -->
+  <!-- dynamic assets -->
+  <link rel="stylesheet" type="text/css" href="../Assets/Autocompleter.css" />
+  <link rel="stylesheet" type="text/css" href="site.css" />
+  <style type="text/css">
+    .demo-info
+    {
+      position:     absolute;
+      top:        0;
+      right:        4px;
+      padding:      1px 2px;
+      font-size:      0.9em;
+      color:        #888;
+    }
+    
+    input.autocompleter-loading
+    {
+      background-image:   url(spinner.gif);
+      background-repeat:    no-repeat;
+      background-position:  right 50%;
+    }
+  </style>
+  
+  <script type="text/javascript" src="mootools-1.2-core-nc.js"></script>
+  <script type="text/javascript" src="../Source/Observer.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.js"></script>
+  <script type="text/javascript" src="../Source/Autocompleter.Request.js"></script>
+  <script type="text/javascript">
+    document.addEvent('domready', function() {
+  
+      /**
+       * Simple example, backend returns a list of <li> elements,
+       * processed by Autocompleter.Request.HTML.
+       */
+      var inputWord = $('demo-word');
+  
+      new Autocompleter.Request.HTML(inputWord, 'http://digitarald.de/project/autocompleter/1-1/showcase/request-html/script.php', {
+        'indicatorClass': 'autocompleter-loading' // class added to the input during request
+      });
+  
+      /**
+       * Second input with extended list and custom inject
+       * choice function. This one gets the first element
+       * for the value and marks the searched string.
+       */
+      var inputWord2 = $('demo-word2');
+  
+      // Our instance for the element with id "demo-word2"
+      new Autocompleter.Request.HTML(inputWord2, 'http://digitarald.de/project/autocompleter/1-1/showcase/request-html/script.php', {
+        'indicatorClass': 'autocompleter-loading',
+        'postData': {
+          'extended': '1' // send additional POST data, check the PHP code
+        },
+        'injectChoice': function(choice) {
+          // choice is one <li> element
+          var text = choice.getFirst();
+          // the first element in this <li> is the <span> with the text
+          var value = text.innerHTML;
+          // inputValue saves value of the element for later selection
+          choice.inputValue = value;
+          // overrides the html with the marked query value (wrapped in a <span>)
+          text.set('html', this.markQueryValue(value));
+          // add the mouse events to the <li> element
+          this.addChoiceEvents(choice);
+        }
+      });
+  
+    });
+  </script>
+
+</head>
+<body>
+  <div id="demo-container">
+    <h3>Showcase "HTML Request"</h3>
+
+    <p></p>
+  
+    <h4 class="code">The Action Happens Here</h4>
+    <div id="demo">
+      
+      <form action="http://www.spanishdict.com/translate" method="get" id="form-demo">
+        <fieldset>
+      
+          <legend>Spanish Dictionary:</legend>
+          <label>
+            <span>Single word:</span>
+            <input type="text" name="word" class="text" id="demo-word" />
+          </label>
+      
+          <label>
+            <span>Single word (Extended list):</span>
+            <input type="text" name="word2" class="text" id="demo-word2" />
+          </label>
+      
+        </fieldset>
+      
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+  
