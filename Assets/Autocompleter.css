@@ -48,3 +48,10 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried
 {
 	color:					#9FCFFF;
 }
+
+.autocompleter-loading
+{
+  background-image:     url(images/spinner.gif);
+  background-repeat:    no-repeat;
+  background-position:  right 50%;
+}

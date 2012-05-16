@@ -18,7 +18,7 @@
       height:       50px;
     }
     
-    img.autocompleter-loading
+    img.autocompleter-loading-img
     {
       vertical-align:   top;
     }
@@ -41,7 +41,7 @@
       var inputWord2 = $('demo-words');
   
       // An element as indicator, shown during background request
-      var indicator = inputWord2.getPrevious().getElement('.autocompleter-loading');
+      var indicator = inputWord2.getPrevious().getElement('.autocompleter-loading-img');
       indicator.setStyle('display', 'none');
   
       new Autocompleter.Request.JSON(inputWord2, 'http://digitarald.de/project/autocompleter/1-1/showcase/request-json/script.php', {
@@ -75,7 +75,7 @@
           </label>
       
           <label>
-            <span>As Tags: <img src="spinner.gif" class="autocompleter-loading" /></span>
+            <span>As Tags: <img src="../Assets/images/spinner.gif" class="autocompleter-loading-img" /></span>
             <textarea rows="100" cols="100" id="demo-words">playa, palma</textarea>
       
           </label>
