@@ -332,6 +332,8 @@ var Autocompleter = new Class({
 	 * @return		{String} Text
 	 */
 	markQueryValue: function(str) {
+	  if (!str) return; // if str is null
+	  
 		return (!this.options.markQuery || !this.queryValue) ? str
 			: str.replace(new RegExp('(' + ((this.options.filterSubset) ? '' : '^') + this.queryValue.escapeRegExp() + ')', (this.options.filterCase) ? '' : 'i'), '<span class="autocompleter-queried">$1</span>');
 	},

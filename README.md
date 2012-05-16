@@ -100,7 +100,7 @@ Requirements
 
 ### MooTools JavaScript Framework
 
-Download [MooTools 1.2 Core](http://mootools.net/core) with at least these modules:
+Download [MooTools 1.4.5 Core](http://mootools.net/core) with at least these modules:
 
 * Element.Dimensions
 * Fx.Tween
@@ -112,6 +112,11 @@ Download [MooTools 1.2 Core](http://mootools.net/core) with at least these modul
 
 Changelog
 ---------
+
+### 1.1.3 (2012-05-16)
+* Working with MooTools 1.4.5
+* Fixed: Problem with null strings
+* Added: spinner.gif for progress indicator to main styles
 
 ### 1.1.2 (2008-08-19)
 * Added: Option indicator for Autocompleter.Ajax, element is shown during request.
