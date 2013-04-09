@@ -55,3 +55,8 @@ ul.autocompleter-choices li.autocompleter-selected span.autocompleter-queried
   background-repeat:    no-repeat;
   background-position:  right 50%;
 }
+
+textarea.autocompleter-loading
+{
+  background-position:  right bottom;
+}

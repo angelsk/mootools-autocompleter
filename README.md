@@ -3,7 +3,7 @@ AutoCompleter (v1.1)
 
 Credit: Harald Kirschner - http://digitarald.de/project/autocompleter/
 
-Updated to work with MooTools 1.4.5 (with compatibility) by Jo Carter (angelsk on github)
+Updated to work with MooTools 1.4.5 (with/without compatibility) by Jo Carter (angelsk on github) and partikule (on github)
 
 This AutoCompleter script for [MooTools](http://mootools.net/) provides the functionality for text suggestion and completion. 
 It features different data-sources (local, JSON or XML), a variety of user interactions, custom formatting, multiple selection, 
@@ -114,6 +114,14 @@ Download [MooTools 1.4.5 Core](http://mootools.net/core) with at least these mod
 
 Changelog
 ---------
+
+### 1.1.5 (2013-04-09) - by Jo Carter (angelsk on github)
+
+Updated to fully work with Mootools 1.4.5 (without need of compat. mode) 
+
+### 1.1.4 (2013-01-03) - from https://github.com/partikule/mootools-autocompleter
+
+Updated to Mootools 1.4.5 (without need of compat. mode) 
 
 ### 1.1.3 (2012-05-16) - by Jo Carter (angelsk on github)
 * Working with MooTools 1.4.5
